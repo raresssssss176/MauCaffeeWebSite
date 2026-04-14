@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meniu | Mau Cafe</title>
+    <style>
+        :root {
+            --mocha: #3d2b1f;
+            --cream: #fdfaf5;
+            --gold: #c5a059;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--mocha);
+            color: var(--cream);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            padding: 40px;
+            border: 1px solid var(--gold);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .menu-slide {
+            display: none;
+            animation: fade 1.5s;
+        }
+
+        h2 {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            user-select: none;
+            text-decoration: none;
+        }
+
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev { left: 0; border-radius: 0 3px 3px 0; }
+
+        .prev:hover, .next:hover { background-color: rgba(197, 160, 89, 0.2); }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        .home-link {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+    <div class="menu-slide">
+        <h2>Espresso</h2>
+        <ul>
+            <li>Small Espresso</li>
+            <li>Double Espresso</li>
+            <li>Flavoured Espresso</li>
+            <li>Flavoured Double Espresso</li>
+        </ul>
+    </div>
+
+    <div class="menu-slide">
+        <h2>Coffee & Milk</h2>
+        <ul>
+            <li>Flat White</li>
+            <li>Café Latte</li>
+            <li>Cappuccino</li>
+            <li>Flavoured Café Latte</li>
+            <li>Flavoured Cappuccino</li>
+        </ul>
+    </div>
+
+    <div class="menu-slide">
+        <h2>Specialties</h2>
+        <ul>
+            <li>Caramel Macchiato</li>
+            <li>Café Mocca</li>
+            <li>White Mocca</li>
+        </ul>
+    </div>
+
+    <div class="menu-slide">
+        <h2>Chocolate & Tea</h2>
+        <ul>
+            <li>Hot Chocolate</li>
+            <li>Flavoured Hot Chocolate</li>
+            <li>Ceai (Selecție Premium)</li>
+        </ul>
+    </div>
+
+    <div class="menu-slide">
+        <h2>Summer Drinks</h2>
+        <ul>
+            <li>Ice Frappe</li>
+            <li>Cocktail Non Alcoholic</li>
+            <li>Ice Cappuccino</li>
+        </ul>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    <a href="/" class="home-link">Înapoi la Acasă</a>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("menu-slide");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+    }
+</script>
+
+</body>
+</html>

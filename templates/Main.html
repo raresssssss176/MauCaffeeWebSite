@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mau Cafe Bacău | Specialty & Cozy</title>
+    <style>
+        :root {
+            --bg-cream: #f9f6f2;
+            --mau-gold: #c5a059;
+            --mau-dark: #2b1d12;
+            --mau-warm: #4a3728;
+            --soft-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Optima', 'Didot', 'Georgia', serif;
+            background-color: var(--bg-cream);
+            color: var(--mau-dark);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--mau-dark);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        /* Nav Button Style */
+        .nav-links .btn-menu-nav {
+            background-color: var(--mau-dark);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .nav-links .btn-menu-nav:hover {
+            background-color: var(--mau-gold);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            padding: 4rem 8% 8rem 8%;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--mau-dark);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--mau-warm);
+            max-width: 450px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 2px;
+            box-shadow: 20px 20px 0px var(--mau-gold);
+        }
+
+        /* Buttons */
+        .btn-gold {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: var(--mau-dark);
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--mau-gold);
+        }
+
+        /* Features */
+        .features {
+            padding: 8rem 8%;
+            background: white;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--mau-gold);
+            font-weight: 400;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--mau-warm);
+        }
+
+        .location-section {
+            padding: 6rem 8%;
+            text-align: center;
+        }
+
+        footer {
+            padding: 4rem 8%;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #999;
+        }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-image { width: 100%; height: 400px; }
+            .features { grid-template-columns: 1fr; }
+            .nav-links { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MAU.</div>
+        <div class="nav-links">
+            <a href="/meniu" class="btn-menu-nav">Meniu</a>
+            <a href="#">Poveste</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Momente<br>de Răsfăț</h1>
+                <p>Situat lângă Biserica Precista, Mau Cafe este locul unde designul modern întâlnește atmosfera caldă a unei dimineți perfecte.</p>
+                <a href="/meniu" class="btn-gold">Vezi Meniul</a>
+            </div>
+            <div class="hero-image"></div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Specialty Frappé</h3>
+                <p>Recunoscuți pentru cele mai cremoase frappé-uri din oraș, preparate cu ingrediente premium.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Selectie de Ale</h3>
+                <p>O experiență diversă, de la cafeaua de dimineață la o selecție rafinată de băuturi artizanale.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Design Cozy</h3>
+                <p>Un spațiu definit prin texturi catifelate, culori calde și o lumină care te invită să rămâi.</p>
+            </div>
+        </section>
+
+        <section class="location-section">
+            <h2>Te așteptăm în vizită</h2>
+            <p style="margin-bottom: 2rem;">Bacău, Strada 9 Mai (Zona Precista)</p>
+            <p>Luni — Duminică: 08:00 - 22:00</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 MAU CAFE BACĂU. Toate drepturile rezervate.
+    </footer>
+
+</body>
+</html>
